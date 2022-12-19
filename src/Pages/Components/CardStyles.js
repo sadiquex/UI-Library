@@ -7,12 +7,15 @@ export const Card1 = styled.div`
 `;
 
 export const Heading = styled.p`
-  display: inline-block;
+  display: ${(props) => (props.open ? "none" : "inline-block")};
+  /* width: ${(props) => (props.open ? "200px" : "30px")}; */
 `;
 export const OpenArrow = styled.i`
-  display: ${(props) => (props.clicked ? "none" : "inline-block")};
+  display: ${(props) => (props.open ? "none" : "inline-block")};
 `;
 export const CloseArrow = styled.i`
-  display: ${(props) => (props.clicked ? "inline-block" : "none")};
+  display: ${(props) => (props.open ? "inline-block" : "none")};
 `;
- 
+export const cardContent = styled.div`
+  display: ${(props) => (props.open ? "block" : "none")};
+`;
