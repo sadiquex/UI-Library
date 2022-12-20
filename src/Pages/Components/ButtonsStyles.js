@@ -20,7 +20,7 @@ export const icon = styled.i`
   /* display: ${(props) => (props.isOpen ? "block" : "none")}; */
 `;
 
-// button 2
+// button 1
 export const btndiv = styled(Container)`
   color: #fff;
   flex-direction: row;
@@ -29,33 +29,70 @@ export const btndiv = styled(Container)`
   border: none;
 `;
 
-export const Button1 = styled.div`
-  border-radius: 10px;
-  background: #d90166;
-  color: #fff;
-  padding: 20px;
-  opacity: ${(props) => (props.click ? ".4" : ".8")};
-  display: ${(props) => (props.isOpen ? "none" : "block")};
-`;
-
-// this is a replacement for the stroke
-export const FixStroke = styled(Button1)`
+// !!!!!!!!!!!!!
+// update
+export const NewBtn = styled(btndiv)`
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 10px;
-  border-radius: 0;
+  background: #d90166;
+  position: relative;
+  width: 100px;
+  height: 30px;
+  padding: 10px 20px;
+  overflow: hidden;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  > * {
+    transition: all 0.6s ease;
+  }
 `;
 
-export const StrokedBtn = styled(Button1)`
-  /* width: 95%; */
-  background: #fff;
-  color: #d90166;
-  stroke: #d90166;
-  stroke-width: 3px;
-  /* opacity: 0.4; */
+export const NewBtnText = styled.p``;
+
+export const NewBtnIcon = styled.i`
+  position: absolute;
+  transform: translateX(20rem);
+  gap: 50px;
 `;
-export const Delete = styled(Button1)`
-  padding: 10px;
-  border-radius: 10px;
+
+export const Button1 = styled(NewBtn)`
+  width: 200px;
+  background: #c70039;
+  border-radius: 0px 14px 0px 14px;
+
+  &:hover {
+    > :first-child {
+      transform: translateY(-20rem);
+    }
+    > :last-child {
+      transform: translateY(0px);
+    }
+  }
+`;
+export const Button2 = styled(Button1)`
+  background: #301934;
+  width: 100px;
+
+  &:hover {
+    filter: brightness(1.3);
+    > :first-child {
+      transform: rotate(360deg);
+      opacity: 0;
+    }
+    > :last-child {
+      transform: translateX(0px);
+    }
+  }
+`;
+export const Button3 = styled(Button2)`
+  background: #ffc300;
+
+  &:hover {
+    filter: brightness(1.3);
+    > :first-child {
+      transform: translateX(-20rem);
+    }
+    > :last-child {
+      transform: translateX(0px);
+    }
+  }
 `;

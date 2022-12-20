@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const container = styled.div`
+  gap: 10px;
   width: 100vw;
   height: 100vh;
   /* height: 400px; */
