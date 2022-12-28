@@ -3,22 +3,18 @@ import styled from "styled-components";
 // contains the buttons alone
 export const Container = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   border: 2px solid red;
   gap: 20px;
 `;
-
-// button 1
 
 export const text = styled.p`
   display: inline-block;
 `;
 
-export const icon = styled.i`
-  /* opacity: ${(props) => (props.click ? "0.5" : "1")}; */
-  /* display: ${(props) => (props.isOpen ? "block" : "none")}; */
-`;
+export const icon = styled.i``;
 
 // button 1
 export const btndiv = styled(Container)`
@@ -34,10 +30,8 @@ export const btndiv = styled(Container)`
 export const NewBtn = styled(btndiv)`
   display: flex;
   justify-content: center;
-  background: #d90166;
-  position: relative;
-  width: 100px;
   height: 30px;
+  position: relative;
   padding: 10px 20px;
   overflow: hidden;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
@@ -46,7 +40,7 @@ export const NewBtn = styled(btndiv)`
   }
 `;
 
-export const NewBtnText = styled.p``;
+export const NewBtnText = styled.div``;
 
 export const NewBtnIcon = styled.i`
   position: absolute;
@@ -68,9 +62,10 @@ export const Button1 = styled(NewBtn)`
     }
   }
 `;
-export const Button2 = styled(Button1)`
+export const Button2 = styled(NewBtn)`
   background: #301934;
   width: 100px;
+  border-radius: 0px 14px 0px 14px;
 
   &:hover {
     filter: brightness(1.3);
@@ -83,11 +78,11 @@ export const Button2 = styled(Button1)`
     }
   }
 `;
-export const Button3 = styled(Button2)`
+export const Button3 = styled(NewBtn)`
   background: #ffc300;
 
   &:hover {
-    filter: brightness(1.3);
+    /* filter: brightness(1.3); */
     > :first-child {
       transform: translateX(-20rem);
     }

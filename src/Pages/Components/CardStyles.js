@@ -2,26 +2,11 @@ import styled from "styled-components";
 
 export const CardContainer = styled.div`
   display: flex;
+  justify-content: center;
+  /* align-items: center; */
   flex-wrap: wrap;
   gap: 20px;
-  /* width: 600px; */
   /* border: 2px solid rebeccapurple; */
-  /* overflow: scroll; */
-`;
-
-// first Card
-export const Card1 = styled.div`
-  /* background: #fff; */
-  padding: 10px;
-  color: #000;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  gap: 10px;
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-  cursor: pointer;
 `;
 
 export const CardImage = styled.div`
@@ -33,11 +18,6 @@ export const CardImage = styled.div`
   &:hover {
     transform: scale(1.1);
   }
-`;
-export const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 `;
 
 export const ProductName = styled.p`
@@ -52,9 +32,15 @@ export const Description = styled.p`
 export const PriceAndCart = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
   border: 2px solid red;
+
+  .cardOne {
+    width: 90%;
+    background: red;
+  }
+  /* border: 2px solid red; */
 `;
 
 export const Price = styled.p`
@@ -62,6 +48,23 @@ export const Price = styled.p`
   font-weight: bolder;
 `;
 export const Cart = styled.i``;
+
+// first Card
+export const Card1 = styled.div`
+  background: orange;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 10px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px;
+  min-width: 230px;
+  max-width: 230px;
+  /* width: 230px; */
+  min-height: 250px;
+`;
 
 // second card
 export const Card2 = styled(Card1)`
@@ -85,12 +88,11 @@ export const Card2Content = styled.div`
   position: absolute;
   bottom: -100px;
   left: 0;
-  width: 100%;
   line-height: 1.5;
   transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
   box-shadow: 1px 1px 10px #808080;
-  /* padding: 10px; */
   border-radius: 8px 8px 0 0;
+  height: 50%;
 
   &:hover {
     bottom: 0;
@@ -99,13 +101,10 @@ export const Card2Content = styled.div`
 
 // !!!!!!!!!!!!!!
 // card 3
-export const Card3 = styled(Card1)`
+export const Card3 = styled(Card2)`
   background: #000;
   transition: all 0.6s ease;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
 `;
 
@@ -130,11 +129,11 @@ export const Card3Down = styled.div`
   padding: 10px;
   left: 0;
   height: 50%;
-  /* width: 100%; */
   transition: all 0.5s ease;
 
   &:hover {
     height: 80%;
+    /* transform: translateY(100%); */
   }
 `;
 

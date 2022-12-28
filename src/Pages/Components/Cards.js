@@ -1,5 +1,4 @@
 import { createElement as $ } from "react";
-import { useState } from "react";
 import {
   CardContainer,
   Card1,
@@ -7,7 +6,6 @@ import {
   Card3,
   Card4,
   CardImage,
-  Image,
   ProductName,
   Description,
   PriceAndCart,
@@ -21,12 +19,6 @@ import {
 } from "./CardStyles";
 
 const Cards = () => {
-  const [open, setOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setOpen(!open);
-  };
-
   // !!!!!!!!!!
   return $(
     CardContainer,
@@ -34,18 +26,12 @@ const Cards = () => {
     $(
       Card1,
       { className: "Card One" },
-      $(
-        CardImage,
-        { className: "card-image" }
-        // $(Image, {
-        //   src: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFnfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
-        // })
-      ),
+      $(CardImage, { className: "card-image" }),
       $(ProductName, null, "Product Name"),
       $(Description, null, "This is the product description and details"),
       $(
         PriceAndCart,
-        null,
+        { className: "cardOne" },
         $(Price, null, "$299.59"),
         $(Cart, { className: "fa fa-shopping-cart" })
       )
@@ -53,17 +39,11 @@ const Cards = () => {
     $(
       Card2,
       { className: "Card-two" },
-      $(
-        CardImage,
-        { className: "card-image" }
-        // $(Image, {
-        //   src: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmFnfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
-        // })
-      ),
+      $(CardImage, { className: "card-image" }),
       $(
         Card2Content,
         { className: "card-2-content" },
-        $(ProductName, null, "Product Name"),
+        $(ProductName, null, "Card two"),
         $(
           Description,
           null,
@@ -80,17 +60,11 @@ const Cards = () => {
     $(
       Card3,
       { className: "Card-three" },
-      $(
-        Card3Top,
-        { className: "card-3-top" },
-        $(Image, {
-          src: "https://static.vecteezy.com/system/resources/previews/001/191/989/non_2x/circle-logo-png.png",
-        })
-      ),
+      $(Card3Top, { className: "card-3-top" }),
       $(
         Card3Down,
         { className: "card-3-down" },
-        $(ProductName, null, "Product Name"),
+        $(ProductName, null, "Card three"),
         $(Description, null, "This is the product description and details"),
         $(
           PriceAndCart,
@@ -106,7 +80,7 @@ const Cards = () => {
       $(
         Card4Top,
         null,
-        $(ProductName, null, "Product Name"),
+        $(ProductName, null, "Card four"),
         $(Description, null, "This is the product description and details"),
         $(
           PriceAndCart,
@@ -115,7 +89,12 @@ const Cards = () => {
           $(Cart, { className: "fa fa-shopping-cart" })
         )
       ),
-      $(Card4Down, null, $(ProductName, null, "Product Image Here"))
+      $(
+        Card4Down,
+        null,
+        $(ProductName, null, "Product Image Here"),
+        $(Description, null, "This is the product description and details")
+      )
     )
   );
 };
